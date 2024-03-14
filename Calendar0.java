@@ -6,6 +6,11 @@ public class Calendar0 {
 	
 	// Gets a year (command-line argument), and tests the functions isLeapYear and nDaysInMonth.
 	public static void main(String args[]) {
+		if (args.length != 1) {
+			System.out.println("Usage: java Calendar0 <year>");
+			return;
+		}
+		
 		int year = Integer.parseInt(args[0]);
 		isLeapYearTest(year);
 		nDaysInMonthTest(year);
@@ -53,8 +58,9 @@ public class Calendar0 {
 		case 6:
 		case 9:
 		case 11:
-			return 30;}
-		if (month ==2 && isLeapYear(year))
+			return 30;
+		}
+		if (month == 2 && isLeapYear(year))
 			return 29;
 		else
 			return 28;
